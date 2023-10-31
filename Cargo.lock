@@ -3,6 +3,12 @@
 version = 3
 
 [[package]]
+name = "ac-library-rs"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "09e1ead7b72f44698f97266946c0576d00c9e2010858f5aba47aa4660177ef73"
+
+[[package]]
 name = "aho-corasick"
 version = "0.7.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -180,6 +186,7 @@ checksum = "3e2e65a1a2e43cfcb47a895c4c8b10d1f4a61097f9f254f183aee60cad9c651d"
 name = "math-and-algorithm"
 version = "0.1.0"
 dependencies = [
+ "ac-library-rs",
  "alga",
  "ascii",
  "bitset-fixed",
