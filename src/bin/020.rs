@@ -1,25 +1,25 @@
 #![allow(non_snake_case)]
 
 use proconio::input;
-use superslice::Ext;
 
 fn main() {
     input! {
         N: usize,
-        mut A: [i32; N]
+        mut A: [usize; N]
     }
 
-    A.sort();
-    let mut answer = 0;
-    for i in 0..N{
-        for j in i+1..N{
-            for k in j+1..N{
-                for l in k+1..N{
-                    let n = 1000 - A[i] - A[j] - A[k] - A[l];
-                    answer += A[l+1..].equal_range(&n).len();
-                }
+    let mut dp = vec![vec![0; 1001]; 6];
+    dp[0][0] = 1;
+
+    for &a in &A {
+        for i in (1..=5).rev() {
+            for j in (a..=1000).rev() {
+                dp[i][j] += dp[i - 1][j - a];
             }
         }
     }
-    println!("{}", answer);
+    println!("{}", dp[5][1000]);
 }
+
+
+
