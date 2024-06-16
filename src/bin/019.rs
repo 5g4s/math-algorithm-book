@@ -10,11 +10,11 @@ fn main() {
     }
 
     let mut result: Vec<i64> = vec![0; 4];
-    for i in A.iter() {
-        result[*i] += 1;
+    for &i in &A {
+        result[i] += 1;
     }
     let mut answer = 0;
-    for n in result.iter() {
+    for &n in &result {
         answer += n * (n - 1) / 2;
     }
     println!("{}", answer);
