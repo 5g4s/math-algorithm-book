@@ -9,6 +9,6 @@ fn main() {
         mut R:[f64; N]
     }
 
-    let result = (R.iter().sum::<f64>() + B.iter().sum::<f64>()) / N as f64;
+    let result = (B.iter().sum::<f64>() + R.iter().sum::<f64>()) / N as f64;
     println!("{}", result);
 }
