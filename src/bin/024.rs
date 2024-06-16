@@ -5,9 +5,12 @@ use proconio::input;
 fn main() {
     input! {
         N: usize,
-        PQ: [(f32, f32); N],
+        PQ: [(i32, i32); N],
     }
 
-    let result = PQ.iter().map(|(p,q)| q / p).sum::<f32>();
-    println!("{:?}", result);
+    let result = PQ
+        .iter()
+        .map(|&(p, q)| (q as f32) / (p as f32))
+        .sum::<f32>();
+    println!("{:.?}", result);
 }
