@@ -5,10 +5,14 @@ use proconio::input;
 fn main() {
     input! {
         N: usize,
-        A: [f32; N],
-        B: [f32; N]
+        A: [i32; N],
+        B: [i32; N]
     }
 
-    let result = A.iter().zip(B).map(|(a, b)| (a + b * 2.) / 3.).sum::<f32>();
+    let result = A
+        .iter()
+        .zip(B.iter())
+        .map(|(&a, &b)| (a as f32 + b as f32 * 2.) / 3.)
+        .sum::<f32>();
     println!("{:?}", result);
 }
