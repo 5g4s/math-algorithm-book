@@ -6,7 +6,7 @@ use std::cmp::min;
 fn main() {
     input! {
         N: usize,
-        h: [i64; N],
+        h: [i32; N],
     }
 
     let mut dp = vec![0; N];
@@ -18,5 +18,5 @@ fn main() {
             dp[i - 2] + (h[i] - h[i - 2]).abs(),
         );
     }
-    println!("{}", dp[N-1]);
+    println!("{}", dp[N - 1]);
 }
